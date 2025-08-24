@@ -1,0 +1,37 @@
+Day 4:
+
+create two instance:
+
+UBUNTU MACHINE USER DATA:
+
+User data:
+#!/bin/bash
+yes | sudo apt update
+yes | sudo apt install apache2
+echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
+sudo systemctl restart apache2
+
+Linux MACHINE USER DATA:
+#!/bin/bash
+# Use this for your user data (script from top to bottom)
+# install httpd (Linux 2 version)
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
+
+
+
+Database Creation:
+
+A database is an organized collection of structured information, or data, typically stored electronically in a computer system. A database is usually
+ controlled by a database management system (DBMS). Together, the data and the DBMS, along with the applications that are associated with them, 
+ are referred to as a database system, often shortened to just database.
+
+POSTGRESQL 
+pgagent -> to connect from local
+
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads -- download pgadmin
+
+CREATE TABLE employee(eid int NOT NULL PRIMARY KEY, name dinesh(30));
